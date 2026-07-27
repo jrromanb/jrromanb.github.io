@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Camada</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bars.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <!--Inicio Navbar-->
+        <div id="nav-placeholder">
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script>
+                $.get("./navbar.html", function(data) {
+                    $("#nav-placeholder").replaceWith(data);
+                    if (localStorage.getItem("statusSesion")) {
+                        document.getElementById("sesion").style.display = "none";
+                        document.getElementById("sesionActive").style.display = "flex";
+                    }
+                });
+            </script>
+        </div>
+        <!--Finaliza Navbar-->
+        <section>
+            <!--Banner Publicidad-->
+            <div id="carouselExampleIndicators" class="carousel slide baner container-xl" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner ">
+                    <div class="carousel-item active">
+                        <img src="https://img77.uenicdn.com/image/upload/v1580708254/category/shutterstock_1525458542.jpg" height="450px" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr25a6G0E4EFrCXLrScG6MhHU0Gs2AiTf9aSRbrPvZamZvlGXAKJ8zIAA&s=10" height="450px" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://mivet.com/wp-content/uploads/fly-images/1132/perrete-19-1-740x680-c.jpg" height="450px" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Atras</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </button>
+            </div>
+        </section>
+        <!--Finaliza Banner-->
+        <section>
+            <div class="descripcion">
+                <div class="textD">La Camada es una tienda especializada en alimentos y juguetes para animales, pensada para brindar todo lo necesario para el bienestar, la diversión y el cuidado de tus mascotas. Ofrecemos productos de calidad para perros, gatos y otros animales de compañía, con opciones que se adaptan a diferentes edades, tamaños y necesidades. En La Camada encontrarás una atención cercana, variedad de productos y todo lo que buscas para consentir a tu mejor amigo.</div>
+            </div>
+        </section>
+        <section>
+            <!-- Mejor vendidos -->
+            <h3 id="titulosn">Mejor Vendidos</h3>
+            <section class="cards">
+                <article class="card card1">
+                    <div class="cardInfoHover">
+                        <div class="cardVendidasInfo">
+                            <svg class="cardVendidas" viewBox="0 0 24 24"><path/>
+                  </svg><span class="cardTime">Vendidas 780</span>
+                        </div>
+                    </div>
+                    <img src="https://www.whiskas.com.mx/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf8961/files/2023-04/70646002930.H.png">
+                    </a>
+                    <div class="cardInfo">
+                        <span class="cardCategory"> Alimentos</span>
+                        <h3 class="cardTitle">Croquetas</h3>
+                        <a class="btn btn-secondary" href="/catalogo.html" role="button">Ver</a>
+                    </div>
+                </article>
+                <article class="card card2">
+                    <div class="cardInfoHover">
+                        <div class="cardVendidasInfo">
+                            <svg class="cardVendidas" viewBox="0 0 24 24"><path/>
+              </svg><span class="cardTime">Vendidas 748</span>
+                        </div>
+                    </div>
+                   <img src="https://www.petco.com.mx/medias/1200ftw-144481.jpg?context=bWFzdGVyfHJvb3R8MTkzOTQ5fGltYWdlL2pwZWd8YURJeUwyZzFOUzh4TURnM01EVTJORGd4TkRnM09DOHhNakF3Wm5SM1h6RTBORFE0TVM1cWNHY3w0NTJkNDVmNWUzNzE5YzYzNjMxNGY3OGYwMzE3MDVkYWI2NGE1MWY5YWI3ZTJmNGM5MzAzN2I2MGY3MWRhZDNj">
+                    </a>
+                    <div class="cardInfo">
+                        <span class="cardCategory"> Castillos</span>
+                        <h3 class="cardTitle">Castillo de arbol</h3>
+                        <a class="btn btn-secondary" href="./catalogo.html" role="button">Ver</a>
+                    </div>
+                </article>
+                <article class="card card4">
+                    <div class="cardInfoHover">
+                        <div class="cardVendidasInfo">
+                            <svg class="cardVendidas" viewBox="0 0 24 24"><path/>
+                </svg><span class="cardTime">Vendidas 574</span>
+                        </div>
+                    </div>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_765751-MLM76273805842_052024-O.webp">
+                    </a>
+                    <div class="cardInfo">
+                        <span class="cardCategory"> Comedores</span>
+                        <h3 class="cardTitle">Comedor dos en uno</h3>
+                        <a class="btn btn-secondary" href="./catalogo.html" role="button">Ver</a>
+                    </div>
+                </article>
+            </section>
+        </section>
+        <!-- Finaliza Mejor Vendidos -->
+        <section>
+            <!-- Nuevos productos -->
+            <h3 id="titulosn">Nuevos Productos</h3>
+            <section class="cards">
+                <article class="card card5">
+                    <div class="cardInfoHover">
+                        <div class="cardVendidasInfo">
+                            <svg class="cardVendidas" viewBox="0 0 24 24"><path/>
+                  </svg><span class="cardTime">NEW!!!</span>
+                        </div>
+                    </div>
+                    <img src="https://ss345.liverpool.com.mx/xl/1164356767.jpg">
+                    </a>
+                    <div class="cardInfo">
+                        <span class="cardCategory"> Juguetes</span>
+                        <h3 class="cardTitle">Pelotas</h3>
+                        <a class="btn btn-secondary" href="./catalogo.html" role="button">Ver</a>
+                    </div>
+                </article>
+                <article class="card card6">
+                    <div class="cardInfoHover">
+                        <div class="cardVendidasInfo">
+                            <svg class="cardVendidas" viewBox="0 0 24 24"><path/>
+              </svg><span class="cardTime">NEW!!!</span>
+                        </div>
+                    </div>
+                    <img src="https://i5.walmartimages.com/asr/93f503be-3920-4b49-92b4-b188d9b50b63.f554941f06a3732001e631ebeb5a1431.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF">
+                    </a>
+                    <div class="cardInfo">
+                        <span class="cardCategory"> Higiene y cuidado </span>
+                        <h3 class="cardTitle">shampoo para pulgas</h3>
+                        <a class="btn btn-secondary" href="./catalogo.html" role="button">Ver</a>
+                    </div>
+                </article>
+            </section>
+        </section>
+        <!-- Finaliza Mejor Vendidos -->
+        <footer>
+            <!--Inicio footer-->
+            <div id="foot-placeholder">
+                <script src="//code.jquery.com/jquery.min.js"></script>
+                <script>
+                    $.get("./footer.html", function(data) {
+                        $("#foot-placeholder").replaceWith(data);
+                    });
+                </script>
+            </div>
+        </footer>
+        <!--Final de Footer-->
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+
+</html>

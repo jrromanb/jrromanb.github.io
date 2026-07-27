@@ -1,0 +1,198 @@
+@import 
+url("https://fonts.googleapis.com/css2?family=Oswald:wght@320&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    /* width: 100%; */
+    
+}
+
+.contenedor {
+    position: relative;
+    display: flex;
+    background-image: url('http://drive.google.com/uc?export=view&id=1u-G6tdC5FLt6FA9L_1B5ox7AA4ZZUFxu');
+    background-position: right;
+    background-size: cover;
+}
+
+.right {
+    /* border: 1px red solid; */
+    align-self: center;
+    width: 100%; 
+}
+
+.left {
+    width: 40%;
+    background-color: #ffffff;
+    border-style: inherit;
+    box-shadow: rgba(0, 0, 0, 0.178) 0px 0px 10px 0px;
+    border-radius: 20px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 3% 5%;
+}
+
+.llamact {
+    text-align: center;
+}
+
+
+/* HASTA AQUI */
+
+.formC {
+    /*centrado del formulario*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+.mapResponsive {
+    overflow: hidden;
+    padding-bottom: 80%;
+    position: relative;
+    height: 0;
+}
+
+.mapResponsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+ul {
+    list-style: none;
+    margin: 0 0 0 1%;
+}
+
+#titulosn {
+    text-align: center;
+    color: black;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+.alertContact {
+    color: red;
+}
+
+
+/*Aside informacion de la empresa*/
+
+.llamado {
+    padding-top: 10px;
+    padding-left: 5px;
+    font-size: 10px;
+}
+
+.listaInfo {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+.listaInfo li {
+    position: relative;
+    padding-left: 25px;
+}
+
+/*Final de Aside informacion de la empresa*/
+
+.alert {
+    color: red;
+    font-size: 79%;
+}
+
+.btn {
+    background: #1d1d1c;
+    color: #ffffff;
+    width: 25%;
+    margin-left: 20%;
+}
+
+
+
+/* Botón "Ir Arriba" */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(58, 45, 231);
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 90%;
+    width: 10%;
+    max-height: 57px;
+    text-align: center;
+    justify-content: center;
+}
+
+#myBtn:hover {
+    background-color: rgb(114, 150, 31);
+}
+
+.a_Contactanos {
+    color: #FFFFFF;
+}
+
+.a_Contactanos:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#enviar:hover{
+    color: #FFFFFF;
+}
+
+/* Botón "Ir Arriba" */
+
+
+@media (max-width: 900px) {
+    .contenedor {
+        flex-direction: column;
+        background-image: none;
+    }
+    .left {
+        width: 90%;
+        margin: 5%;
+    }
+    .right {
+        width: 100%;
+    }
+    .btn {
+        width: 50%;
+        margin-left: 0%;
+    }
+    #titulosn {
+        text-align: center;
+        letter-spacing: 2px;
+        width: 80%;
+    }
+}
+

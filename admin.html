@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diseño en madera & CNC</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/admin.css" />
+</head>
+
+<body>
+    <main>
+        <section class="navigation">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                        <span class="title"><h2>Administrador</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks" onclick="openTab(event, 'vistaProductos')">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i
+              ></span>
+                        <span class="title">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks active" onclick="openTab(event, 'vistaListaProductos')">
+                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i
+              ></span>
+                        <span class="title">Lista productos</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a class="tablinks" onclick="openTab(event, 'vistaFormProductos')">
+                        <span class="icon"><i class="fa fa-plus" aria-hidden="true"></i
+              ></span>
+                        <span class="title">Agregar Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="btnForm">Salir</button>
+                </li>
+            </ul>
+            
+        </section>
+        <section class="main_content" id="vistaProductos">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(0)"></div>
+            </div>
+            <h1>Productos</h1>
+        </section>
+        <section class="main_content" id="vistaListaProductos" style="display: block;">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(1)"></div>
+                <div class="search">
+                    <label for="">
+                    <input type="text" placeholder="Busca aquí" id="inputSearchList" onkeyup="searchList()">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                </div>
+                <div class="user">
+                    <img src="./img/Fotos/MarihanItzel.png" alt="Usurio foto">
+                </div>
+            </div>
+            <h1>Lista de Productos</h1>
+            <div class="details">
+                <div class="viewTypes">
+                    <table class="tabla1" width="100%" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Nombre</td>
+                                <td>Valoracion</td>
+                                <td>Precio</td>
+                                <td>Status</td>
+                                <td>Editar</td>
+                                <td>Imágenes</td>
+                            </tr>
+                        </thead>
+                        <tbody id="listItemsAdmin">
+
+                        </tbody>
+                </div>
+            </div>
+            </table>
+        </section>
+
+
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nombreProducto"></h5>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="descripcionProducto">
+
+
+                        <form class="formProducto" action="" id="myFormEd">
+                            <h3 id="titulosn">Editar un producto</h3>
+
+                            <!--NOMBRE-->
+                            <div class="form-group col-md-6">
+                                <label for="nombreEd">Nombre del producto: </label>
+                                <input type="text" class="form-control" id="nombreEd">
+                                <div class="alert alert-danger" id="alertnombreEd" style="display: none"></div>
+                            </div>
+
+                            <!--DESCRIPCION-->
+                            <div class="form-group col-md-6">
+                                <label for="descripcionEd">Descripción del producto : </label>
+                                <input type="text" class="form-control" id="descripcionEd">
+                                <div class="alert alert-danger" id="alertdesEd" style="display: none"></div>
+                            </div>
+
+                            <!--CATEGORIA-->
+                            <div class="form-group col-md-6">
+                                <label for="categoriaEd">Categoría : </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios1Ed" value="1">
+                                    <label class="form-check-label" for="gridRadios1Ed">
+                                  Alimentos
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios2Ed" value="2">
+                                    <label class="form-check-label" for="gridRadios2Ed">
+                                  Castillos
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios3Ed" value="3">
+                                    <label class="form-check-label" for="gridRadios3Ed">
+                                  Comedores 
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios4Ed" value="4">
+                                    <label class="form-check-label" for="gridRadios4Ed">
+                                  Juguetes 
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosEd" id="gridRadios4Ed" value="5">
+                                    <label class="form-check-label" for="gridRadios4Ed">
+                                  Higiene y cuidado
+                                </label>
+                                </div>
+                                <div class="alert alert-danger" id="alertcatEd" style="display: none"></div>
+                            </div>
+
+                            <br>
+                            <!--RATE-->
+                            <div class="form-group col-md-6">
+                                <label for="rateEd">Calificación (0-5) : </label>
+                                <input type="range" min="0" max="5" step="any" class="form-control" id="calificacionEd" list="tickmarks">
+                                <datalist id="tickmarks">
+                                <option value="0">
+                                <option value="1">
+                                <option value="2">
+                                <option value="3">
+                                <option value="4">
+                                <option value="5">
+                              </datalist>
+                                <div class="alert alert-danger col-md-6" id="alertrangeEd" style="display: none"></div>
+                            </div>
+
+                            <!--Status-->
+                            <div class="form-group col-md-6">
+                                <label for="status">Status : </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosSEd" id="gridRadiosSAEd" value="activo">
+                                    <label class="form-check-label" for="gridRadiosSAEd">
+                                   Activo
+                                 </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadiosSEd" id="gridRadiosSIEd" value="inactivo">
+                                    <label class="form-check-label" for="gridRadiosSIEd">
+                                   Inactivo
+                                 </label>
+                                </div>
+                                <div class="alert alert-danger" id="alertcat1Ed" style="display: none"></div>
+                            </div>
+
+                            <!--Costo-->
+                            <div class="form-group col-md-6">
+                                <label for="costEd">Costo : </label>
+                                <input type="text" class="form-control" id="costoEd">
+                                <div class="alert alert-danger" id="alertcostEd" style="display: none"></div>
+                            </div>
+
+                            <!--IMAGEN-->
+                            <div class="form-group col-md-6">
+                                <label for="fileImageEd">Selecciona una imagen:</label>
+                                <input type="button" class="form-control btn-info" value="Subir imagen" id="btnFakeEd">
+                                <input type="file" class="form-control-file" id="fileImageEd" style="display:none">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <img id="imageFileEd" name="imageFileEd" src="" alt="" title="Vista previa" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
+                            </div>
+                            <div class="alert alert-danger" id="alertimgEd" style="display: none"></div>
+                            <br>
+
+                            <button type="button" class="btn btn-outline" type="submit" id="enviarEd">Guardar</button>
+                        </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <section class="main_content" id="vistaFormProductos">
+            <div class="header_content">
+                <div class="toggle" onclick="toggleMenu(2)"></div>
+
+            </div>
+            <section class="contenedor">
+                <!-- Formulario -->
+                <section class="form" id="formFirst">
+                    <form class="formProducto" action="" id="myForm">
+                        <h3 id="titulosn">Agregar nuevo producto</h3>
+
+                        <!--NOMBRE-->
+                        <div class="form-group col-md-6">
+                            <label for="nombre">Nombre del producto: </label>
+                            <input type="text" class="form-control" id="nombre">
+                            <div class="alert alert-danger" id="alertnombre" style="display: none"></div>
+                        </div>
+
+                        <!--DESCRIPCION-->
+                        <div class="form-group col-md-6">
+                            <label for="descripcion">Descripción del producto : </label>
+                            <input type="text" class="form-control" id="descripcion">
+                            <div class="alert alert-danger" id="alertdes" style="display: none"></div>
+                        </div>
+
+                        <!--CATEGORIA-->
+                        <div class="form-group col-md-6">
+                            <label for="categoria">Categoría : </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1">
+                                <label class="form-check-label" for="gridRadios1">
+                              Almacenamiento
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
+                                <label class="form-check-label" for="gridRadios2">
+                              Cocina
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="3">
+                                <label class="form-check-label" for="gridRadios3">
+                              Decoración 
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="4">
+                                <label class="form-check-label" for="gridRadios4">
+                              Varios 
+                            </label>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" id="alertcat" style="display: none"></div>
+
+                        <br>
+                        <!--RATE-->
+                        <div class="form-group col-md-6">
+                            <label for="rate">Calificación (0-5) : </label>
+                            <input type="range" min="0" max="5" step="any" class="form-control" id="calificacion" list="tickmarks">
+                            <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                          </datalist>
+                            <div class="alert alert-danger col-md-6" id="alertrange" style="display: none"></div>
+                        </div>
+
+                        <!--Status-->
+                        <div class="form-group col-md-6">
+                            <label for="status">Status : </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadiosS" id="gridRadiosSA" value="activo">
+                                <label class="form-check-label" for="gridRadiosSA">
+                               Activo
+                             </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadiosS" id="gridRadiosSI" value="inactivo">
+                                <label class="form-check-label" for="gridRadiosSI">
+                               Inactivo
+                             </label>
+                            </div>
+                            <div class="alert alert-danger" id="alertcat1" style="display: none"></div>
+                        </div>
+
+                        <!--Costo-->
+                        <div class="form-group col-md-6">
+                            <label for="cost">Costo : </label>
+                            <input type="text" class="form-control" id="costo">
+                            <div class="alert alert-danger" id="alertcost" style="display: none"></div>
+                        </div>
+
+                        <!--IMAGEN-->
+                        <div class="form-group col-md-6">
+                            <label for="fileImage">Selecciona una imagen:</label>
+                            <input type="button" class="form-control btn-info" value="Subir imagen" id="btnFake">
+                            <input type="file" class="form-control-file" id="fileImage" style="display:none">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <img id="imageFile" name="imageFile" src="" alt="" title="Vista previa" />
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <textarea rows="20" class="form-control" data-toggle="tooltip" data-placement="bottom" id="inputFile" name="inputFile" value="" placehodler="Imagen del curso" title="Imagen" style="display:block"></textarea>                  -->
+                        </div>
+                        <div class="alert alert-danger" id="alertimg" style="display: none"></div>
+                        <br>
+
+                        <button type="button" class="btn btn-outline" type="submit" id="enviar">Guardar</button>
+                    </form>
+                </section>
+                <!-- Formulario-->
+            </section>
+
+        </section>
+    </main>
+    <script type="text/javascript">
+        function toggleMenu(view) {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            // let main_content = document.querySelector('.main_content');
+            let main_contentArray = document.getElementsByClassName("main_content");
+
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            //  main_contentArray[view].classList.toggle('active')
+
+            if (navigation.classList.contains('active') && toggle.classList.contains('active')) {
+                for (let index = 0; index < main_contentArray.length; index++) {
+                    // console.log("main"+main_contentArray[index]);
+                    toggle.classList.toggle('active');
+                    navigation.classList.toggle('active')
+                    main_contentArray[index].classList.toggle('active')
+                } //for
+            } //if
+        } //Function toggle del boton de hamburgesa para contraer vista
+
+        function openTab(evt, description) {
+            //   console.log("event",evt+"Descri: ",description);
+            let i, main_content, tablinks;
+            main_content = document.getElementsByClassName("main_content");
+            // console.log("mainContent: ",main_content);
+            for (i = 0; i < main_content.length; i++) {
+                // console.log("main content i", main_content[i]);
+                main_content[i].style.display = "none";
+            } //for
+            tablinks = document.getElementsByClassName("tablinks");
+            // console.log("tab: " + tablinks);
+            for (i = 0; i < tablinks.length; i++) {
+                // console.log("tablinks i", tablinks[i]);
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            } //for
+            // console.log("evento", evt);
+            document.getElementById(description).style.display = "block";
+            evt.currentTarget.className += " active";
+        } //Function openTab del menu para cambiar de seccion las vistas
+        function searchList() {
+            var input, filter, listItem, rowTr, a, i, txtValue, b, txtValueb, c, txtValueb;
+            input = document.getElementById('inputSearchList');
+            filter = input.value.toUpperCase();
+            listItem = document.getElementById("listItemsAdmin");
+            rowTr = listItem.getElementsByClassName('activeT');
+
+            for (i = 0; i < rowTr.length; i++) {
+                a = rowTr[i].getElementsByTagName("td")[1];
+                b = rowTr[i].getElementsByTagName("td")[3];
+                c = rowTr[i].getElementsByTagName("td")[2];
+                txtValue = a.textContent || a.innerText;
+                txtValueb = b.textContent || b.innerText;
+                txtValuec = c.textContent || c.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValueb.toUpperCase().indexOf(filter) > -1 || txtValuec.toUpperCase().indexOf(filter) > -1) {
+                    rowTr[i].style.display = "";
+                } else {
+                    rowTr[i].style.display = "none";
+                } //else
+            } //for
+        } //searchList
+    </script>
+    <script type="text/javascript" src="./js/admin.js"></script>
+    <script type="text/javascript" src="./js/formproducto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+
+</html>

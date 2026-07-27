@@ -1,0 +1,200 @@
+/*------------------------Inicio Navbar--------------------------------*/
+
+.nav-link {
+    font-weight: bolder;
+}
+
+#carritoCompra {
+    position: relative;
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.navbar-custom {
+    /*Color de fondo para Navbar */
+    background-color:  #c7e0dde1;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    font-size: medium;
+    color: rgba(7, 7, 7, 0.63);
+    letter-spacing: 2%;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.911);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+.logo {
+    width: 38px;
+    height: 52px;
+    margin-left: 10px;
+    margin-right: 0px;
+    padding: 0%;
+}
+
+.logo_2 {
+    min-height: 59px;
+    width: 67%;
+    margin-left: 0px;
+    height: 7%;
+    max-width: 100px !important;
+}
+
+
+/*--------------------------Fin Nabvar-------------------------*/
+
+
+/*=======================footer=================================*/
+
+.footer a {
+    color: #000;
+    font-weight: lighter;
+}
+
+.footer a:hover {
+    color: #0056b3;
+    font-weight: lighter;
+}
+
+.footer {
+    height: 20%;
+    width: 100%;
+    display: inline-flex;
+    /* background-color: #27272723; */
+    box-shadow: inset 0 0 0.5px 0.5px rgba(0, 0, 0, 0.212);
+    background-image: url('https://us.123rf.com/450wm/elovich/elovich1702/elovich170200027/71383336-tabl%C3%B3n-de-madera-blanca-de-textura-fondo-r%C3%BAstico-luz.jpg'); 
+    background-repeat: repeat;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-politicas {
+    text-align: center;
+    font-size: 2vmin;
+    width: 35vmin;
+}
+
+.footer-politicas p {
+    margin: auto 0;
+}
+
+.footer-logo{
+    width: 25vmin;
+}
+
+.footer-lobo {
+    /* height: 10vh; */
+    width: 100%;
+    height: 10vh;
+    width: 10vmin;
+    margin-top: 2%;
+}
+
+#socialmedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vmin;
+}
+
+#socialmedia i {
+    align-items: center;
+    font-size: 3.5vmin;
+}
+
+
+/*==========================================final del footer=============================*/
+
+@media (max-width: 991px) {
+    ul {
+        padding-top: 10px;
+    }
+    .navbar-nav .nav-item {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    p {
+        text-align: center;
+    }
+    .footer-lobo {
+        height: 9vh;
+        width: 9vmin;
+    }
+    #socialmedia i {
+        align-items: center;
+        font-size: 3vmin;
+    }
+    .logo_2 {
+        position: absolute;
+        left: 26%;
+        right: 26%;
+        width: 50%;
+        min-height: 49px;
+        padding-top: 0px !important;
+        padding-bottom: 12px !important;
+        max-height: 50px !important;
+    }
+    #carritoCompra {
+        position: absolute;
+        right: 3%;
+        top: 25%;
+        width: 35px !important;
+        height: 35px !important;
+        top: 7px !important;
+    }
+    .navbar-toggler {
+        position: relative;
+        right: 45%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 800px) {
+    .footer {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        background-color: #27272723;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer>div:nth-child(2) {
+        width: 100%;
+        order: 1;
+    }
+    .footer>div:nth-child(1),
+    .footer>div:nth-child(3) {
+        width: 30%;
+        order: 2;
+        margin-bottom: 2vmin;
+    }
+    .footer-politicas {
+        text-align: center;
+        font-size: 3vmin;
+        margin-top: 2%;
+    }
+    #socialmedia {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        font-size: 5vmin;
+        margin-top: 2%;
+        width: 25vw;
+    }
+    
+    #myBtn {
+        display: none !important;
+    }
+    .footer-lobo {
+        height: 8vmin;
+        width: 8vmin;
+        margin-top: 10%
+    }
+}
